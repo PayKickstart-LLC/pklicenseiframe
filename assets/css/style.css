@@ -1,0 +1,43 @@
+.listKeys{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	/*border-bottom: 1px dashed #DDD;*/
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size: 16px;
+}
+.listUsages{
+	margin-top: 2px;
+	margin-bottom: 2px;
+	border-bottom: 1px dashed #DDD;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 20px;
+	font-size: 14px;
+	font-weight: normal;
+}
+.icon-key{
+	margin-right: 10px;
+}
+.icon-info-sign{
+	margin-right: 10px;
+}
+.introText{
+	border-bottom: 1px dashed #DDD;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size: 24px;
+}
+.introBlock{
+	padding: 10px;
+	color: #6B695D;
+	font-size: 12px;
+	background-color: #FAF7E5;
+	border-bottom: 2px solid #d8b1ab;
+	font-weight: bold;
+}
+body{
+	margin: 20px;
+}
