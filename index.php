@@ -2,8 +2,8 @@
 /*
  * Define your API key and your campaign id
 */
-$auth_token = "3A0CKD9XafhE";
-$campaign_id = 246;
+$auth_token = "YourAPIKey";
+$campaign_id = 123;
 $email = $_GET['email']; 
 /*
  * Main view logic begins from here
