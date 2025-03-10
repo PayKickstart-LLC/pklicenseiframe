@@ -1,42 +1,41 @@
 <?php
-	/**
-	 * Created by PhpStorm.
-	 * User: rugge
-	 * Date: 15/03/2017
-	 * Time: 15:14
-	 */
+/**
+ * Created by PhpStorm.
+ * User: rugge
+ * Date: 15/03/2017
+ * Time: 15:14
+ */
 
-	require( 'PKLicense.php' );
-	$pk_results = [];
-	$PKLicense = new PKLicense( $auth_token );
+require('PKLicense.php');
 
-	$thisURL = $_SERVER[ 'PHP_SELF' ];
+$auth_token = 'YourAPIKey';
+$campaign_id = 'YOUR-CAMPAIGN-ID';
+$pk_results = [];
+$PKLicense = new PKLicense($auth_token);
 
-	if( isset( $_GET[ 'action' ] ) AND $_GET[ 'action' ] == 'deactivate' ) {
-		if( !isset( $_POST[ 'license_key' ] ) ) {
-			die( 'no license key supplied' );
-		}
+$thisURL = $_SERVER['PHP_SELF'];
 
-		$license_key = $_POST[ 'license_key' ];
+if (isset($_GET['action']) and $_GET['action'] == 'deactivate') {
+    if (!isset($_POST['license_key'])) {
+        die('no license key supplied');
+    }
 
-		if( $PKLicense->isValidPKLicense( $license_key ) ) {
+    $license_key = $_POST['license_key'];
 
-			$results = $PKLicense->clearPKLicense( $license_key );
-			die( 'pk license deactivated' );
-		}
-	}
+    if ($PKLicense->isValidPKLicense($license_key)) {
 
-	if( !empty( $email ) ) {
+        $results = $PKLicense->clearPKLicense($license_key);
+        die('pk license deactivated');
+    }
+}
 
-		$pk_licenses =  $PKLicense->getPKLicenses($campaign_id, $email);
+if (!empty($email)) {
+    $pk_licenses = $PKLicense->getPKLicenses($campaign_id, $email);
 
-		//print_r($pk_licenses);
-		//die();
-
-		if( isset( $pk_licenses->success ) && $pk_licenses->success ) {
-			if( isset( $pk_licenses->data ) && count( $pk_licenses->data ) > 0 ) {
-				$pk_results = $pk_licenses->data;
-			}
-		}
-	}
+    if (isset($pk_licenses->success) && $pk_licenses->success) {
+        if (isset($pk_licenses->data) && count($pk_licenses->data) > 0) {
+            $pk_results = $pk_licenses->data;
+        }
+    }
+}
 
